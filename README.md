@@ -93,6 +93,9 @@ $$
 {\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx} 
 $$ 
 
+The KLA is essentially a **geometric mean of probability densities**, normalized so that the result is still a valid probability distribution. In the discrete occupancy setting, this produces a fused estimate that balances the beliefs of all robots while discounting unreliable or noisy ones.  
+
+The exponential efficiency model captures the idea that the longer a robot explores, the less reliable its measurements become. By embedding this into the fusion formula, we prevent a single robot with a long path (and possibly degraded sensing) from dominating the global map.
 
 ### Discrete Case (Occupancy Probabilities)
 
@@ -106,6 +109,35 @@ If uniform weights are chosen
 
 $$ \pi_i = \tfrac{1}{N} $$
 
-, each robot contributes equally.
+each robot contributes equally so : 
+
+$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N \, p_i(\theta_j)^{	frac{1}{N}}} {\prod_{i=1}^N \, p_i(\theta_j)^{	frac{1}{N}} + \prod_{i=1}^N (1 - p_i(\theta_j))^{	frac{1}{N}}} $$
+
+
+### Sensor Noise and Efficiency
+
+In more realistic settings, we model sensor measurements as noisy:
+
+- **Gaussian noise**  
+$$
+\xi \sim \mathcal{N}(0, \sigma^2)
+$$
+
+- **Uniform noise**  
+$$
+\xi \sim \sigma^2 U(0,1), \quad \sigma \in \mathbb{R}
+$$
+
+To account for sensor degradation or trajectory effects, we assign an efficiency factor:
+
+$$
+\eta_i(d) = e^{-\alpha d}, \quad \alpha > 0
+$$
+
+where d is the travelled distance of robot i. This means robots that explore longer trajectories contribute less confidently to the fusion.
+
+
+## License and Disclaimer
+This repository is distributed under the MIT License. The software is provided *“as is”*, without warranty of any kind. The author assumes no responsibility for improper use or damages.
 
 
