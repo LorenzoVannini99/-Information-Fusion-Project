@@ -32,15 +32,15 @@ $$
 \theta_k \in \{0,1\}, \quad k = 1, \dots, M
 $$
 
-Each robot \( i \) assigns a probability of occupancy to the cell:
+Each robot $$ i $$ assigns a probability of occupancy to the cell:
 
 $$
 P_i(\theta_k) \in [0,1], \quad i = 1,\dots,N
 $$
 
-A threshold \(\varepsilon \in [0,0.5]\) allows classification:
-- **Free** if \( P_i(\theta_k) < \varepsilon \)  
-- **Occupied** if \( P_i(\theta_k) > 1-\varepsilon \)  
+A threshold $$ \varepsilon \in [0,0.5] $$ allows classification:
+- **Free** if $$ P_i(\theta_k) < \varepsilon $$  
+- **Occupied** if $$ P_i(\theta_k) > 1-\varepsilon $$  
 - **Uncertain** otherwise  
 
 If no prior knowledge is available:
