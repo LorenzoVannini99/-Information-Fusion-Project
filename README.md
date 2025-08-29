@@ -50,8 +50,11 @@ allows classification:
 
 $$ P_i(\theta_k) < \varepsilon $$
 
-**Occupied** if $$ P_i(\theta_k) > 1-\varepsilon $$  
-- **Uncertain** otherwise  
+**Occupied** if :
+
+$$ P_i(\theta_k) > 1-\varepsilon $$  
+
+**Uncertain** otherwise  
 
 If no prior knowledge is available:
 
