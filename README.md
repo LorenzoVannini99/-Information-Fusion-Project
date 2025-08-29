@@ -70,7 +70,7 @@ $$  p_1(x), \dots, p_N(x) $$ .
 The **weighted Kullback–Leibler average** is defined as:
 
 $$ 
-\bar{p} = \underset{p}{\operatorname{argmin}}
+\bar{p} = \underset{p}{\argmin}
 \sum_{i=1}^N \pi_i \int p(x) \log \frac{p(x)}{p_i(x)} \, dx
 $$ 
 
