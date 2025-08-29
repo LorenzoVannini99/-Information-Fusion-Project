@@ -32,7 +32,7 @@ $$
 \theta_k \in \{0,1\}, \quad k = 1, \dots, M
 $$
 
-Each robot $$ i $$ assigns a probability of occupancy to the cell:
+Each robot $ i $ assigns a probability of occupancy to the cell:
 
 $$
 P_i(\theta_k) \in [0,1], \quad i = 1,\dots,N
