@@ -65,6 +65,7 @@ $$
 ### Fusion with Kullback–Leibler Average (KLA)
 
 We want to fuse the N probability distributions 
+
 $$  p_1(x), \dots, p_N(x) $$ .  
 
 The **weighted Kullback–Leibler average** is defined as:
