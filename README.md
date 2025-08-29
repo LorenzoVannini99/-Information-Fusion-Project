@@ -34,6 +34,6 @@ The project investigates both theoretical and experimental aspects:
   - Uncertain otherwise
 If no prior knowledge is available:
 
-\[
-P_0(\theta_k) = \tfrac{1}{2}
-\]
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
