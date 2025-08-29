@@ -34,6 +34,6 @@ The project investigates both theoretical and experimental aspects:
   - Uncertain otherwise
 If no prior knowledge is available:
 
-```math
-SE = \frac{\sigma}{\sqrt{n}}
-```
+
+$$ SE = \frac{\sigma}{\sqrt{n}} $$
+
