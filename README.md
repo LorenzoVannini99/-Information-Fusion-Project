@@ -111,19 +111,21 @@ $$ \pi_i = \tfrac{1}{N} $$
 
 each robot contributes equally so : 
 
-$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N \, p_i(\theta_j)^{	frac{1}{N}}} {\prod_{i=1}^N \, p_i(\theta_j)^{	frac{1}{N}} + \prod_{i=1}^N (1 - p_i(\theta_j))^{	frac{1}{N}}} $$
+$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N \, p_i(\theta_j)^{	\tfrac{1}{N}}} {\prod_{i=1}^N \, p_i(\theta_j)^{	\tfrac{1}{N}} + \prod_{i=1}^N (1 - p_i(\theta_j))^{	\tfrac{1}{N}}} $$
 
 
 ### Sensor Noise and Efficiency
 
 In more realistic settings, we model sensor measurements as noisy:
 
-- **Gaussian noise**  
+**Gaussian noise**
+  
 $$
 \xi \sim \mathcal{N}(0, \sigma^2)
 $$
 
-- **Uniform noise**  
+**Uniform noise**
+
 $$
 \xi \sim \sigma^2 U(0,1), \quad \sigma \in \mathbb{R}
 $$
@@ -136,6 +138,43 @@ $$
 
 where d is the travelled distance of robot i. This means robots that explore longer trajectories contribute less confidently to the fusion.
 
+
+
+### Fusion with Efficiency Weights
+
+Replacing the raw probabilities $$ p_i(\theta) $$ with efficiency-adjusted ones:
+
+$$
+p_i^\eta(\theta) = \frac{1}{2} + \left(p_i(\theta) - \tfrac{1}{2}\right) \eta_i
+$$
+
+The fusion rule becomes:
+
+$$ \bar{p}(\theta) = \frac{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}} {\prod_{j=1}^N \, \left[ \tfrac{1}{2}  (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j} + \prod_{j=1}^N \, \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}} $$
+
+
+This formulation ensures that:
+- Perfectly reliable robots ($$\eta=1$$) contribute their full measurement.  
+- Unreliable robots ($$\eta \to 0$$) contribute only prior information.  ### Fusion with Efficiency Weights
+
+Replacing the raw probabilities $$ p_i(\theta) $$ with efficiency-adjusted ones:
+
+$$
+p_i^\eta(\theta) = \frac{1}{2} + \left(p_i(\theta) - \tfrac{1}{2}\right) \eta_i
+$$
+
+The fusion rule becomes:
+
+$$
+\bar{p}(\theta) =
+\frac{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}}
+{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}
++ \prod_{j=1}^N \, \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}}
+$$
+
+This formulation ensures that:
+- Perfectly reliable robots ($$\eta=1$$) contribute their full measurement.  
+- Unreliable robots ($$\eta \to 0$$) contribute only prior information.  
 
 ## License and Disclaimer
 This repository is distributed under the MIT License. The software is provided *“as is”*, without warranty of any kind. The author assumes no responsibility for improper use or damages.
