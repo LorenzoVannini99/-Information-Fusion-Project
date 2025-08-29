@@ -274,6 +274,18 @@ This formulation ensures that:
 - Perfectly reliable robots ($$\eta=1$$) contribute their full measurement.  
 - Unreliable robots ($$\eta \to 0$$) contribute only prior information.  
 
+
+### 💻 My Experiments
+
+I've created several code files for the system's simulation and validation.
+
+In an initial series of experiments, I implemented a **pure pursuit controller** to guide the robots along a predefined path. This was done to test how the system reacts to different parameters. I varied the **sensor range** to observe its effect on the final map. I generated final maps with different ranges, such as $$r=4$$, $$r=6$$, and $$r=9$$.
+
+To make the experiments more realistic, I introduced **stochastic noise** into the sensor model. I used both **Gaussian noise** ($$\xi \sim \mathcal{N}(0, \sigma^2)$$) and **uniform noise** ($$\xi \sim \sigma^2 \mathcal{U}(0, 1)$$). This allowed me to evaluate the system's robustness under uncertain measurement conditions.
+
+Additionally, to simulate another source of uncertainty, I added an **efficiency coefficient** $$\eta_i \in [0, 1]$$ for each robot, based on the distance it traveled ($$d_i$$). I used a decreasing exponential function, $$\eta(d) = e^{-\alpha d}$$, to model the concept that measurements taken over longer paths are more likely to be corrupted. This efficiency was then integrated into the fusion algorithm to give more weight to more reliable measurements.
+
+
 ## License and Disclaimer
 This repository is distributed under the MIT License. The software is provided *“as is”*, without warranty of any kind. The author assumes no responsibility for improper use or damages.
 
