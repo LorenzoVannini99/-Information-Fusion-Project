@@ -134,7 +134,7 @@ $$
 \sum_{i=1}^{N} \pi_i (\log p(x) + 1) - \sum_{i=1}^{N} \pi_i \log p_i(x) + \lambda = 0
 $$
 
-Since $\sum_{i=1}^{N} \pi_i = 1$, the equation simplifies to:
+Since $$\sum_{i=1}^{N} \pi_i = 1$$, the equation simplifies to:
 $$
 \log p(x) + 1 - \sum_{i=1}^{N} \pi_i \log p_i(x) + \lambda = 0
 $$
@@ -151,13 +151,13 @@ $$
 p(x) = e^{\sum_{i=1}^{N} \pi_i \log p_i(x)} \cdot e^{-(1 + \lambda)}
 $$
 
-Using the property of logarithms that $\sum a \log b = \log (\prod b^a)$:
+Using the property of logarithms that $$\sum a \log b = \log (\prod b^a)$$:
 
 $$
 \sum_{i=1}^{N} \pi_i \log p_i(x) = \log \left( \prod_{i=1}^{N} p_i(x)^{\pi_i} \right)
 $$
 
-Substituting this back into the equation for $p(x)$:
+Substituting this back into the equation for $$p(x)$$:
 
 $$
 p(x) = e^{\log \left( \prod_{i=1}^{N} p_i(x)^{\pi_i} \right)} \cdot e^{-(1 + \lambda)}
@@ -173,7 +173,7 @@ $$
 p(x) = Z \prod_{i=1}^{N} p_i(x)^{\pi_i}
 $$
 
-Finally, we use the constraint $\int p(x) \, dx = 1$ to find $Z$:
+Finally, we use the constraint $$\int p(x) \, dx = 1$$ to find $$Z$$:
 $$
 \int Z \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx = 1
 $$
@@ -186,7 +186,7 @@ $$
 Z = \frac{1}{\int \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx}
 $$
 
-Substituting $Z$ back into the expression for $p(x)$ gives the final closed-form solution:
+Substituting $$Z$$ back into the expression for $$p(x)$$ gives the final closed-form solution:
 
 $$
 \bar{p}(x) = \frac{\prod_{i=1}^{N} p_i(x)^{\pi_i}}{\int \prod_{j=1}^{N} p_j(x)^{\pi_j} \, dx}
