@@ -21,8 +21,6 @@ The project investigates both theoretical and experimental aspects:
 - Example experiments and resulting fused maps  
 
 
-# Autonomous Agent – Information Fusion for Multi-Robot Mapping
-
 ## Mathematical Framework
 
 ### Occupancy Grid
