@@ -38,8 +38,15 @@ $$
 P_i(\theta_k) \in [0,1], \quad i = 1,\dots,N
 $$
 
-A threshold $$ \varepsilon \in [0,0.5] $$ allows classification:
-- **Free** if $$ P_i(\theta_k) < \varepsilon $$  
+A threshold 
+$$ 
+\varepsilon \in [0,0.5]
+$$ allows classification:
+
+**Free** if 
+$$
+P_i(\theta_k) < \varepsilon
+$$  
 - **Occupied** if $$ P_i(\theta_k) > 1-\varepsilon $$  
 - **Uncertain** otherwise  
 
