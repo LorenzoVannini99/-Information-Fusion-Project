@@ -27,7 +27,7 @@ The project investigates both theoretical and experimental aspects:
 We model the environment as an **occupancy grid**, where each cell is a binary random variable:
 
 $$
-\theta_k \in \{0,1\}, \quad k = 1, \dots, M
+\theta_k \in [ 0,1 ], \quad k = 1, \dots, M
 $$
 
 The ith robot assigns a probability of occupancy to the cell:
