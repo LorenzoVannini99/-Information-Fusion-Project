@@ -1,4 +1,4 @@
-# -Information-Fusion-Project
+# Information-Fusion-Project
 
 The code is provided for research and educational purposes only.
 The author does not assume any responsibility for improper use or damages caused by this software.
