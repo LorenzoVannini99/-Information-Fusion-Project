@@ -74,7 +74,10 @@ $$
 \sum_{i=1}^N \pi_i \int p(x) \log \frac{p(x)}{p_i(x)} \, dx
 $$ 
 
-where the weights $$ \pi_i \ge 0$$ , $$ \sum \pi_i = 1$$ .  
+where the weights 
+$$ \pi_i \ge 0$$ 
+and
+$$ \sum \pi_i = 1$$ .  
 
 This has a closed form solution:
 
