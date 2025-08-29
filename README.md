@@ -91,3 +91,20 @@ $$
 \bar{p}(x) = \frac{\prod_{i=1}^N \, p_i(x)^{\pi_i}}
 {\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx}
 $$ 
+
+
+### Discrete Case (Occupancy Probabilities)
+
+For a given cell the fusion becomes:
+
+$$
+\bar{p}(\theta_j) = 
+\frac{\prod_{i=1}^N \, p_i(\theta_j)^{\pi_i}}
+{\prod_{i=1}^N \, p_i(\theta_j)^{\pi_i}
++ \prod_{i=1}^N (1 - p_i(\theta_j))^{\pi_i}}
+$$
+
+If uniform weights are chosen 
+$$ \pi_i = \tfrac{1}{N} $$
+, each robot contributes equally.
+
