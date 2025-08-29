@@ -142,7 +142,7 @@ where $$d$$ is the travelled distance of robot $$i$$. This means robots that exp
 
 ### Fusion with Efficiency Weights
 
-Replacing the raw probabilities $$ p_i(\theta) $$ with efficiency-adjusted ones:
+Replacing the raw probabilities $$p_i(\theta)$$ with efficiency-adjusted ones:
 
 $$
 p_i^\eta(\theta) = \frac{1}{2} + \left(p_i(\theta) - \tfrac{1}{2}\right) \eta_i
