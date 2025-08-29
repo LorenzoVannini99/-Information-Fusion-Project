@@ -4,7 +4,7 @@ The code is provided for research and educational purposes only.
 The author does not assume any responsibility for improper use or damages caused by this software.
 
 ## Overview
-This project studies the **map fusion problem** in a multi-robot system.  
+This project studies the **map fusion problem** in a multi-robot system ina **Matlab** environment.  
 Each robot builds a local occupancy grid map using its onboard sensors. These local maps can then be fused into a consistent global map.  
 
 The project investigates both theoretical and experimental aspects:
