@@ -83,7 +83,7 @@ The **weighted Kullback–Leibler average** is defined as:
 
 $$ 
 \bar{p} = \underset{p}{argmin}
-\sum_{i=1}^N \pi_i \int p(x) \log \frac{p(x)}{p_i(x)} \, dx
+\sum_{i=1}^N \pi_i \int p(x) \log \frac{p(x)}{p_i(x)}  dx
 $$ 
 
 The idea is to find a single distribution  that is "closest" on average to all the other distributions in the set, with the weights $$\pi_i$$ determining which distributions are more important.
@@ -102,11 +102,11 @@ The objective function to minimize is the weighted sum of KL divergences, subjec
 
 The Lagrangian is defined as:
 
-$$L(p, \lambda) = \sum_{i=1}^{N} \pi_i \int p(x) \log \frac{p(x)}{p_i(x)} \, dx + \lambda \left( \int p(x) \, dx - 1 \right)$$
+$$L(p, \lambda) = \sum_{i=1}^{N} \pi_i \int p(x) \log \frac{p(x)}{p_i(x)}  dx + \lambda \left( \int p(x)  dx - 1 \right)$$
 
 We can rewrite the KL divergence term using properties of logarithms:
 
-$$L(p, \lambda) = \sum_{i=1}^{N} \pi_i \int p(x) (\log p(x) - \log p_i(x)) \, dx + \lambda \left( \int p(x) \, dx - 1 \right)$$
+$$L(p, \lambda) = \sum_{i=1}^{N} \pi_i \int p(x) (\log p(x) - \log p_i(x))  dx + \lambda \left( \int p(x)  dx - 1 \right)$$
 
 To find the minimum, we take the functional derivative of the Lagrangian with respect to $p(x)$ and set it to zero:
 
@@ -117,15 +117,15 @@ $$
 Taking the derivatives term by term:
 
 $$
-\frac{\delta}{\delta p(x)} \left( \sum_{i=1}^{N} \pi_i \int p(x) \log p(x) \, dx \right) = \sum_{i=1}^{N} \pi_i (\log p(x) + 1)
+\frac{\delta}{\delta p(x)} \left( \sum_{i=1}^{N} \pi_i \int p(x) \log p(x)  dx \right) = \sum_{i=1}^{N} \pi_i (\log p(x) + 1)
 $$
 
 $$
-\frac{\delta}{\delta p(x)} \left( - \sum_{i=1}^{N} \pi_i \int p(x) \log p_i(x) \, dx \right) = - \sum_{i=1}^{N} \pi_i \log p_i(x)
+\frac{\delta}{\delta p(x)} \left( - \sum_{i=1}^{N} \pi_i \int p(x) \log p_i(x) dx \right) = - \sum_{i=1}^{N} \pi_i \log p_i(x)
 $$
 
 $$
-\frac{\delta}{\delta p(x)} \left( \lambda \int p(x) \, dx \right) = \lambda
+\frac{\delta}{\delta p(x)} \left( \lambda \int p(x) dx \right) = \lambda
 $$
 
 Summing these terms and setting the result to zero:
