@@ -98,7 +98,7 @@ and
 $$ \sum_{i} \pi_i = 1 $$ 
 
 ### Problem Solution 
-The objective function to minimize is the weighted sum of KL divergences, subject to the normalization constraint $\int p(x) \, dx = 1$. We use the method of Lagrange multipliers.
+The objective function to minimize is the weighted sum of KL divergences, subject to the normalization constraint $\int p(x)  dx = 1$. We use the method of Lagrange multipliers.
 
 The Lagrangian is defined as:
 
@@ -177,21 +177,21 @@ $$
 Finally, we use the constraint $$\int p(x)dx = 1$$ to find $$Z$$:
 
 $$
-\int Z \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx = 1
+\int Z \prod_{i=1}^{N} p_i(x)^{\pi_i}  dx = 1
 $$
 
 $$
-Z \int \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx = 1
+Z \int \prod_{i=1}^{N} p_i(x)^{\pi_i}  dx = 1
 $$
 
 $$
-Z = \frac{1}{\int \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx}
+Z = \frac{1}{\int \prod_{i=1}^{N} p_i(x)^{\pi_i}  dx}
 $$
 
 Substituting $$Z$$ back into the expression for $$p(x)$$ gives the final closed-form solution:
 
 $$
-\bar{p}(x) = \frac{\prod_{i=1}^{N} p_i(x)^{\pi_i}}{\int \prod_{j=1}^{N} p_j(x)^{\pi_j} \, dx}
+\bar{p}(x) = \frac{\prod_{i=1}^{N} p_i(x)^{\pi_i}}{\int \prod_{j=1}^{N} p_j(x)^{\pi_j}  dx}
 $$
 
 This result shows that the KL-average distribution is the normalized weighted geometric mean of the individual distributions.
@@ -199,8 +199,8 @@ This result shows that the KL-average distribution is the normalized weighted ge
 
 ### Intuition
 $$ 
-\bar{p}(x) = \frac{\prod_{i=1}^N \, p_i(x)^{\pi_i}}
-{\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx} 
+\bar{p}(x) = \frac{\prod_{i=1}^N  p_i(x)^{\pi_i}}
+{\int \prod_{i=1}^N  p_i(x)^{\pi_i}  dx} 
 $$ 
 
 The KLA is essentially a **geometric mean of probability densities**, normalized so that the result is still a valid probability distribution. In the discrete occupancy setting, this produces a fused estimate that balances the beliefs of all robots while discounting unreliable or noisy ones.  
@@ -210,7 +210,7 @@ The KLA is essentially a **geometric mean of probability densities**, normalized
 For a given cell the fusion becomes:
 
 
-$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N \, p_i(\theta_j)^{\pi_i}} {\prod_{i=1}^N \, p_i(\theta_j)^{\pi_i} + \prod_{i=1}^N (1 - p_i(\theta_j))^{\pi_i}} $$
+$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N  p_i(\theta_j)^{\pi_i}} {\prod_{i=1}^N  p_i(\theta_j)^{\pi_i} + \prod_{i=1}^N (1 - p_i(\theta_j))^{\pi_i}} $$
 
 
 If uniform weights are chosen 
@@ -219,7 +219,7 @@ $$ \pi_i = \tfrac{1}{N} $$
 
 each robot contributes equally so : 
 
-$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N \, p_i(\theta_j)^{	\tfrac{1}{N}}} {\prod_{i=1}^N \, p_i(\theta_j)^{	\tfrac{1}{N}} + \prod_{i=1}^N (1 - p_i(\theta_j))^{	\tfrac{1}{N}}} $$
+$$ \bar{p}(\theta_j) = \frac{\prod_{i=1}^N  p_i(\theta_j)^{	\tfrac{1}{N}}} {\prod_{i=1}^N  p_i(\theta_j)^{	\tfrac{1}{N}} + \prod_{i=1}^N (1 - p_i(\theta_j))^{	\tfrac{1}{N}}} $$
 
 
 ### Sensor Noise and Efficiency
@@ -237,6 +237,15 @@ $$
 $$
 \xi \sim \sigma^2 U(0,1), \quad \sigma \in \mathbb{R}
 $$
+
+The observed probability becomes:
+
+$$
+\tilde{P}_i(\theta_k) = P_i(\theta_k) + \xi
+$$
+
+which is then clipped into $$[0,1]$$.
+
 
 To account for sensor degradation or trajectory effects, we assign an efficiency factor:
 
@@ -258,7 +267,7 @@ $$
 
 The fusion rule becomes:
 
-$$ \bar{p}(\theta) = \frac{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}} {\prod_{j=1}^N \, \left[ \tfrac{1}{2}  (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j} + \prod_{j=1}^N \, \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}} $$
+$$ \bar{p}(\theta) = \frac{\prod_{j=1}^N  \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}} {\prod_{j=1}^N  \left[ \tfrac{1}{2}  (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j} + \prod_{j=1}^N  \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}} $$
 
 
 This formulation ensures that:
