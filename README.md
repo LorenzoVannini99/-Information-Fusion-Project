@@ -135,6 +135,7 @@ $$
 $$
 
 Since $$\sum_{i=1}^{N} \pi_i = 1$$, the equation simplifies to:
+
 $$
 \log p(x) + 1 - \sum_{i=1}^{N} \pi_i \log p_i(x) + \lambda = 0
 $$
@@ -173,7 +174,8 @@ $$
 p(x) = Z \prod_{i=1}^{N} p_i(x)^{\pi_i}
 $$
 
-Finally, we use the constraint $$\int p(x) \, dx = 1$$ to find $$Z$$:
+Finally, we use the constraint $$\int p(x)dx = 1$$ to find $$Z$$:
+
 $$
 \int Z \prod_{i=1}^{N} p_i(x)^{\pi_i} \, dx = 1
 $$
@@ -202,8 +204,6 @@ $$
 $$ 
 
 The KLA is essentially a **geometric mean of probability densities**, normalized so that the result is still a valid probability distribution. In the discrete occupancy setting, this produces a fused estimate that balances the beliefs of all robots while discounting unreliable or noisy ones.  
-
-The exponential efficiency model captures the idea that the longer a robot explores, the less reliable its measurements become. By embedding this into the fusion formula, we prevent a single robot with a long path (and possibly degraded sensing) from dominating the global map.
 
 ### Discrete Case (Occupancy Probabilities)
 
@@ -246,7 +246,7 @@ $$
 
 where $$d$$ is the travelled distance of robot $$i$$. This means robots that explore longer trajectories contribute less confidently to the fusion.
 
-
+The exponential efficiency model captures the idea that the longer a robot explores, the less reliable its measurements become. By embedding this into the fusion formula, we prevent a single robot with a long path (and possibly degraded sensing) from dominating the global map.
 
 ### Fusion with Efficiency Weights
 
