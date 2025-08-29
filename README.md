@@ -26,21 +26,12 @@ The project investigates both theoretical and experimental aspects:
 ## Mathematical Framework
 
 ### Occupancy Grid
-We model the environment as an **occupancy grid**, where each cell is a binary random variable:
-
-$ \theta_k \in \{0,1\}, \quad k = 1, \dots, M $
-
-Each robot \( i \) assigns a probability of occupancy to the cell:
-
-\[
-P_i(\theta_k) \in [0,1], \quad i = 1,\dots,N
-\]
-
-A threshold \(\varepsilon \in [0,0.5]\) allows classification:
-- **Free** if \( P_i(\theta_k) < \varepsilon \)  
-- **Occupied** if \( P_i(\theta_k) > 1-\varepsilon \)  
-- **Uncertain** otherwise  
-
+- The environment is divided into cells θ_k ∈ {0,1}.
+- Each robot i assigns a probability P_i(θ_k) ∈ [0,1].
+- A threshold ε is used:
+  - Free if P_i(θ_k) < ε
+  - Occupied if P_i(θ_k) > 1 − ε
+  - Uncertain otherwise
 If no prior knowledge is available:
 
 \[
