@@ -166,15 +166,11 @@ $$
 The fusion rule becomes:
 
 $$
-\bar{p}(\theta) =
-\frac{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}}
-{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}
-+ \prod_{j=1}^N \, \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}}
-$$
+\bar{p}(\theta) = \frac{\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j}} {\prod_{j=1}^N \, \left[ \tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]^{\pi_j} + \prod_{j=1}^N \, \left(1 - \left[\tfrac{1}{2} + (p_j(\theta) - \tfrac{1}{2})\eta_j \right]\right)^{\pi_j}} $$
 
 This formulation ensures that:
-- Perfectly reliable robots ($$\eta=1$$) contribute their full measurement.  
-- Unreliable robots ($$\eta \to 0$$) contribute only prior information.  
+- Perfectly reliable robots contribute their full measurement.  
+- Unreliable robots contribute only prior information.  
 
 ## License and Disclaimer
 This repository is distributed under the MIT License. The software is provided *“as is”*, without warranty of any kind. The author assumes no responsibility for improper use or damages.
