@@ -81,7 +81,9 @@ $$ \pi_i \ge 0 $$
 
 and
 
+
 $$ \sum \pi_i = 1$$ .  
+
 
 This has a closed form solution:
 
