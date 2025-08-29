@@ -281,7 +281,7 @@ I've created several code files for the system's simulation and validation.
 
 In an initial series of experiments, I implemented a **pure pursuit controller** to guide the robots along a predefined path. This was done to test how the system reacts to different parameters. I varied the **sensor range** to observe its effect on the final map. I generated final maps with different ranges, such as $$r=4$$, $$r=6$$, and $$r=9$$.
 
-Moreover, I have played A LOT with thehyperparameters of the problem.
+Moreover, I have played A LOT with the hyperparameters of the problem.
 
 ## License and Disclaimer
 This repository is distributed under the MIT License. The software is provided *“as is”*, without warranty of any kind. The author assumes no responsibility for improper use or damages.
