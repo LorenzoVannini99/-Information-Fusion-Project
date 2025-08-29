@@ -28,7 +28,7 @@ The project investigates both theoretical and experimental aspects:
 ### Occupancy Grid
 We model the environment as an **occupancy grid**, where each cell is a binary random variable:
 
-
+$$
 \theta_k \in \{0,1\}, \quad k = 1, \dots, M
 $$
 
