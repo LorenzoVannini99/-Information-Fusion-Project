@@ -87,9 +87,10 @@ $$ \sum_{i} \pi_i = 1 $$
 
 This has a closed form solution:
 
+
 $$ 
 \bar{p}(x) = \frac{\prod_{i=1}^N \, p_i(x)^{\pi_i}}
-{\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx}
+{\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx} 
 $$ 
 
 
@@ -104,7 +105,9 @@ $$
 + \prod_{i=1}^N (1 - p_i(\theta_j))^{\pi_i}}
 $$
 
+
 If uniform weights are chosen 
 $$ \pi_i = \tfrac{1}{N} $$
 , each robot contributes equally.
+
 
