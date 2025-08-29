@@ -60,3 +60,25 @@ $$
 P_0(\theta_k) = \tfrac{1}{2}
 $$
 
+
+
+### Fusion with Kullback–Leibler Average (KLA)
+
+We want to fuse the N probability distributions 
+$$  p_1(x), \dots, p_N(x) $$ .  
+
+The **weighted Kullback–Leibler average** is defined as:
+
+$$ 
+\bar{p} = \underset{p}{\operatorname{argmin}}
+\sum_{i=1}^N \pi_i \int p(x) \log \frac{p(x)}{p_i(x)} \, dx
+$$ 
+
+where the weights $$ \pi_i \ge 0$$ , $$ \sum \pi_i = 1$$ .  
+
+This has a closed form solution:
+
+$$ 
+\bar{p}(x) = \frac{\prod_{i=1}^N \, p_i(x)^{\pi_i}}
+{\int \prod_{i=1}^N \, p_i(x)^{\pi_i} \, dx}
+$$ 
